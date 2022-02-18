@@ -40,18 +40,21 @@ def add_member():
     id = request.json.get('id')
 
     member = {
-        "first_name": first_name,
-        "age": age,
-        "lucky_numbers": lucky_numbers,
-        "id": id
+        'first_name': first_name,
+        'age': age,
+        'lucky_numbers': lucky_numbers,
+        'id': id
      }
     jackson_family.add_member(member)
-    return jsonify({"msg":"working"}, 200)
+    return jsonify({"msg":"Added Member"}, 200)
 
 @app.route('/member/<int:member_id>', methods=['GET'])
 def get_member(member_id):
-    members = jackson_family.get_member(member_id)
-    return jsonify({"msg": "done"}), 200
+    member = jackson_family.get_member(member_id)
+    print(member)
+    return jsonify(member), 200
+
+
 
 # this only runs if `$ python src/app.py` is executed
 if __name__ == '__main__':

@@ -17,18 +17,21 @@ class FamilyStructure:
             {   
                 "id": self._generateId(),
                 "first_name": "John",
+                "last_name": "Jackson",
                 "age": 33,
                 "lucky_numbers": [7, 13, 22]
             },
              {   
                 "id": self._generateId(),
                 "first_name": "Jane",
+                "last_name": "Jackson",
                 "age": 35,
                 "lucky_numbers": [10, 14, 3]
             },
             {   
                 "id": self._generateId(),
                 "first_name": "Jimmy",
+                "last_name": "Jackson",
                 "age": 60,
                 "lucky_numbers": [1]
             },
@@ -44,7 +47,6 @@ class FamilyStructure:
         
 
     def delete_member(self, id):
-        self._member.delete(id)
         
 
     def get_member(self, id):
