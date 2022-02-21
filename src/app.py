@@ -54,6 +54,12 @@ def get_member(member_id):
     print(member)
     return jsonify(member), 200
 
+@app.route('/member/<int:member_id>', methods=['DELETE'])
+def delete_member(member_id):
+    jackson_family.delete_member(member_id)
+    
+    return jsonify({"done":True}), 200
+
 
 
 # this only runs if `$ python src/app.py` is executed
